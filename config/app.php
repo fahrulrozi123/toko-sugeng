@@ -161,8 +161,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Alfa6661\AutoNumber\AutoNumberServiceProvider::class,
-
 
         /*
          * Package Service Providers...

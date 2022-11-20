@@ -58,7 +58,6 @@
                         <tr>
                             <th>No</th>
                             <th>Image</th>
-                            <th>Kode Produk</th>
                             <th>Category</th>
                             <th>Nama Produk</th>
                             <th>Merk</th>
@@ -76,13 +75,12 @@
                                 <td>
                                     <img src="{{ asset('post-images/'.$row->image) }}" alt="" style="width: 40px;">
                                 </td>
-                                <td>{{ $row->kd_produk }}</td>
                                 <td>{{ $row->id_category }}</td>
                                 <td>{{ $row->nama_produk }}</td>
                                 <td>{{ $row->merk }}</td>
-                                <td style="text-align: right">{{ $row->harga_jual }}</td>
-                                <td style="text-align: right">{{ $row->harga_beli }}</td>
-                                <td style="text-align: right">{{ $row->stok }}</td>
+                                <td>{{ $row->harga_jual }}</td>
+                                <td>{{ $row->harga_beli }}</td>
+                                <td>{{ $row->stok }}</td>
                                 <td>
                                     <a data-toggle="modal" data-target="#edit" href="/tampilkategori/{{ $row->id_kategori }}" class="btn btn-sm btn-flat btn-primary">
                                         <i class="fa-solid fa-pen-to-square"></i>
@@ -128,10 +126,6 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label>Kode Produk</label>
-                                                        <input type="text" name="kd_produk" id="kd_produk" class="form-control" required autofocus>
-                                                    </div>
-                                                    <div class="form-group">
                                                         <label for="id_category" class="col-lg-3 col-lg-offset-1 control-label">Kategori</label>
                                                         <select class="form-control select2" id="id_category" name="id_category" style="width: 100%;">
                                                             <option selected="selected">Pilih kategori</option>
@@ -150,15 +144,15 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Harga Beli</label>
-                                                        <input type="text" name="harga_beli" id="harga_beli" class="form-control text-right" type="text" type-currency="IDR" placeholder="Rp" required autofocus>
+                                                        <input type="number" name="harga_beli" id="harga_beli" class="form-control" required autofocus>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Harga Jual</label>
-                                                        <input type="text" name="harga_jual" id="harga_jual" class="form-control text-right" type="text" type-currency="IDR" placeholder="Rp" required autofocus>
+                                                        <input type="number" name="harga_jual" id="harga_jual" class="form-control" required autofocus>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Stok</label>
-                                                        <input type="text" name="stok" id="stok" class="form-control text-right" required autofocus>
+                                                        <input type="number" name="stok" id="stok" class="form-control" required autofocus>
                                                     </div>
                                                 </div>
                                             </div>
