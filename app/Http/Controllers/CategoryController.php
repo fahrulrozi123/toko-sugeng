@@ -8,11 +8,13 @@ use Session;
 
 class CategoryController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $data = Category::all();
         return view('backend.kategori.daftarkategori', compact('data'));
     }
-    public function tambahdata(Request $request){
+    public function tambahdata(Request $request)
+    {
         $data = $request->validate([
             'nama_kategori' => 'required'
         ]);
@@ -22,18 +24,21 @@ class CategoryController extends Controller
 
         return redirect()->route('daftarkategori');
     }
-    public function tampilkategori($id_kategori){
+    public function tampilkategori($id_kategori)
+    {
         $data = Category::find($id_kategori);
         return view('backend.kategori.daftarkategori', compact('data', 'category'));
     }
-    public function updatekategori(Request $request, $id_kategori){
+    public function updatekategori(Request $request, $id_kategori)
+    {
         $data = Category::find($id_kategori);
         $data->update($request->all());
         Session::flash('sukses','Data berhasil di edit');
 
         return redirect()->route('daftarkategori');
     }
-    public function hapuskategori($id_kategori){
+    public function hapuskategori($id_kategori)
+    {
         $data = Category::find($id_kategori);
         $data->delete();
         Session::flash('sukses','Data berhasil di hapus');
