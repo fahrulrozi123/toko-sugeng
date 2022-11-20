@@ -30,7 +30,7 @@
 {{-- akert --}}
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
 {{-- toaster --}}
-<link href="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet" />
+{{-- <link href="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet" /> --}}
 <link rel="stylesheet" href="{{asset ("backend/plugins/fontawesome-free/css/all.min.css")}}">
 <link rel="stylesheet" href="{{asset ("backend/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css")}}">
 <link rel="stylesheet" href="{{asset ("backend/plugins/toastr/toastr.min.css")}}">

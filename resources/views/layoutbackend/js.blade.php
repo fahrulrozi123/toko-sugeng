@@ -57,12 +57,12 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset ("backend/dist/js/demo.js")}}"></script>
 <!-- Demo Js -->
-<script src="{{ asset ("backend/js/demo.js") }}"></script>
+{{-- <script src="{{ asset ("backend/js/demo.js") }}"></script> --}}
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+{{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
 {{-- toaster --}}
-<script src="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+{{-- <script src="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> --}}
 {{-- <script src="{{asset ("backend/plugins/jquery/jquery.min.js")}}"></script> --}}
 <script src="{{asset ("backend/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
 <script src="{{asset ("backend/plugins/sweetalert2/sweetalert2.min.js")}}"></script>
@@ -253,6 +253,32 @@ $(document).ready(function() {
             Swal.fire(
             'Deleted!',
             'Kategori '+kategoriname+' berhasil di hapus',
+            'success'
+            )
+        }
+        });
+    });
+</script>
+
+<script>
+    $('.hapusproduk').click(function(){
+    var produk_id = $(this).attr('data-id_produk');
+    var produkname = $(this).attr('data-nama_produk');
+        Swal.fire({
+            title: "Apa kamu yakin?",
+            text: "kamu akan menghapus produk "+produkname+" ",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        })
+        .then((result) => {
+        if (result.isConfirmed) {
+            window.location = "/hapusproduk/"+produk_id+""
+            Swal.fire(
+            'Deleted!',
+            'produk '+produkname+' berhasil di hapus',
             'success'
             )
         }

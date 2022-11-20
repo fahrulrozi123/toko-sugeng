@@ -57,7 +57,7 @@
                         <thead>
                         <tr>
                             <th>No</th>
-                            <th>Gambar</th>
+                            <th>Image</th>
                             <th>Category</th>
                             <th>Nama Produk</th>
                             <th>Merk</th>
@@ -72,7 +72,9 @@
                             @foreach ($data as $row)
                             <tr>
                                 <th scope="row">{{ $i; }}</th>
-                                <td>{{ $row->gambar }}</td>
+                                <td>
+                                    <img src="{{ asset('post-images/'.$row->image) }}" alt="" style="width: 40px;">
+                                </td>
                                 <td>{{ $row->id_category }}</td>
                                 <td>{{ $row->nama_produk }}</td>
                                 <td>{{ $row->merk }}</td>
@@ -83,7 +85,7 @@
                                     <a data-toggle="modal" data-target="#edit" href="/tampilkategori/{{ $row->id_kategori }}" class="btn btn-sm btn-flat btn-primary">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
-                                    <a href="#" class="btn btn-sm btn-flat btn-danger hapusKategori" data-id_kategori="{{ $row->id_kategori }}" data-nama_kategori="{{ $row->nama_kategori }}">
+                                    <a href="#" class="btn btn-sm btn-flat btn-danger hapusproduk" data-id_produk="{{ $row->id_produk }}" data-nama_produk="{{ $row->nama_produk }}">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </a>
                                 </td>
@@ -117,9 +119,9 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="gambar" class="form-label">Gambar</label>
+                                                        <label for="image" class="form-label">Image</label>
                                                         <img src="" class="img-preview img-fluid mb-3 col-sm-2" alt="">
-                                                        <input class="form-control" type="file" name="gambar" id="gambar" class="form-control" required autofocus>
+                                                        <input class="form-control" type="file" name="image" id="image" class="form-control" required autofocus>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">

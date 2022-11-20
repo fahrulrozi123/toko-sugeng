@@ -18,8 +18,12 @@ class ProdukController extends Controller
         return view('backend.produk.daftarproduk');
     }
     public function tambahproduk(Request $request){
-        // dd($request);
-        Produk::create($request->all());
+        $data = Produk::create($request->all());
+        if($request->hasFile('image')){
+            $request->file('image')->move('post-images/', $request->file('image')->getClientOriginalName());
+            $data->image = $request->file('image')->getClientOriginalName();
+            $data->save();
+        }
         Session::flash('sukses','Data berhasil di tambahkan');
 
         return redirect()->route('daftarproduk');

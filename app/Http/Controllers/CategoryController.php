@@ -12,11 +12,12 @@ class CategoryController extends Controller
         $data = Category::all();
         return view('backend.kategori.daftarkategori', compact('data'));
     }
-    public function edit(Category $category){
-        return view('backend.kategori.daftarkategori');
-    }
     public function tambahdata(Request $request){
-        Category::create($request->all());
+        $data = $request->validate([
+            'nama_kategori' => 'required'
+        ]);
+
+        $data = Category::create($request->all());
         Session::flash('sukses','Data berhasil di tambahkan');
 
         return redirect()->route('daftarkategori');

@@ -32,8 +32,8 @@
                     <div class="card-body">
                         @if ($message = Session::get('sukses'))
                             <div class="alert alert-success alert-block" style="text-align: center;">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            <strong>{{ $message }}</strong>
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>{{ $message }}</strong>
                             </div>
                         @endif
                         <table id="datatable1" class="table table-bordered table-striped">
@@ -148,13 +148,16 @@
                                                 <div class="form-group row">
                                                     <label for="nama_kategori" class="col-lg-3 col-lg-offset-1 control-label">Kategori</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" name="nama_kategori" id="nama_kategori" class="form-control" required autofocus>
+                                                        <input type="text" name="nama_kategori" id="nama_kategori" class="form-control @error('nama_kategori') is-invalid @enderror"  autofocus>
+                                                        @error('nama_kategori')
+                                                            <div class="alert alert-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-sm btn-flat btn-primary tambah">
+                                            <button type="submit" class="btn btn-sm btn-flat btn-primary">
                                                 <i class="fa fa-save"></i> Simpan
                                             </button>
                                             <button type="reset" class="btn btn-sm btn-flat btn-danger">
