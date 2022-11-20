@@ -1,7 +1,6 @@
 <?php
-
 function format_uang ($angka) {
-    return number_format($angka, 0, ',', '.');
+    return number_format("Rp. ". $angka, 0, ',', '.');
 }
 
 function terbilang ($angka) {
@@ -51,11 +50,11 @@ function tanggal_indonesia($tgl, $tampil_hari = true)
     } else {
         $text       .= "$tanggal $bulan $tahun";
     }
-    
-    return $text; 
+
+    return $text;
 }
 
 function tambah_nol_didepan($value, $threshold = null)
 {
-    return sprintf("%0". $threshold . "s", $value);
+    return sprintf("%0". $threshold . "TKS", $value);
 }
