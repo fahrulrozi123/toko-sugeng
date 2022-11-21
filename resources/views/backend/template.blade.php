@@ -7,6 +7,7 @@
 
 @include('layoutbackend.css')
 
+@include('sweetalert::alert')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">

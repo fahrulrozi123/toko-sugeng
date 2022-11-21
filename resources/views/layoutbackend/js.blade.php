@@ -69,6 +69,11 @@
 <script src="{{asset ("backend/plugins/toastr/toastr.min.js")}}"></script>
 {{-- <script src="{{asset ("backend/dist/js/adminlte.min.js?v=3.2.0")}}"></script> --}}
 
+{{-- kalender dashboard --}}
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+
 {{-- format uang --}}
 <script>
     document.querySelectorAll('input[type-currency="IDR"]').forEach((element) => {

@@ -17,7 +17,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item menu-open">
               @section('home')
-              <a href="dashboard" class="nav-link">
+              <a href="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                   Dashboard
@@ -64,6 +64,16 @@
                   </ul>
                 @show
             </li>
+            <li class="nav-item">
+                @section('transaksi')
+                <a href="transaksi" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                        Transaksi
+                    </p>
+                </a>
+                @show
+              </li>
         </ul>
     </nav>
       <!-- /.sidebar-menu -->

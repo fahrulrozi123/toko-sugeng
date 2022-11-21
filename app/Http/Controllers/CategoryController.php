@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Session;
+use Alert;
 
 class CategoryController extends Controller
 {
@@ -33,7 +34,7 @@ class CategoryController extends Controller
     {
         $data = Category::find($id_kategori);
         $data->update($request->all());
-        Session::flash('sukses','Data berhasil di edit');
+        Session::flash('sukses','Data berhasil di tambahkan');
 
         return redirect()->route('daftarkategori');
     }

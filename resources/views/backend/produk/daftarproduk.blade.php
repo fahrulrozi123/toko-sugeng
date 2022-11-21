@@ -31,9 +31,10 @@
                     </div>
                     <div class="card-body">
                         @if ($message = Session::get('sukses'))
-                            <div class="alert alert-success alert-block" style="text-align: center;">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            <strong>{{ $message }}</strong>
+                            <div class="alert alert-success alert-block">
+                                <i class="fa fa-check icon"></i>
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>{{ $message }}</strong>
                             </div>
                         @endif
                         <table id="datatable1" class="table table-bordered table-striped">
@@ -150,15 +151,15 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Harga Beli</label>
-                                                        <input type="text" name="harga_beli" id="harga_beli" class="form-control text-right" type="text" type-currency="IDR" placeholder="Rp" required autofocus>
+                                                        <input type="text" name="harga_beli" id="harga_beli" class="form-control text-right" type="text" type-currency="IDR" placeholder="Rp." required autofocus>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Harga Jual</label>
-                                                        <input type="text" name="harga_jual" id="harga_jual" class="form-control text-right" type="text" type-currency="IDR" placeholder="Rp" required autofocus>
+                                                        <input type="text" name="harga_jual" id="harga_jual" class="form-control text-right" type="text" type-currency="IDR" placeholder="Rp." required autofocus>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Stok</label>
-                                                        <input type="text" name="stok" id="stok" class="form-control text-right" required autofocus>
+                                                        <input type="text" name="stok" id="stok" class="form-control" required autofocus>
                                                     </div>
                                                 </div>
                                             </div>

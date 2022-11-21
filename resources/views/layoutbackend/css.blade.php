@@ -36,4 +36,5 @@
 <link rel="stylesheet" href="{{asset ("backend/plugins/toastr/toastr.min.css")}}">
 <link rel="stylesheet" href="{{asset ("backend/dist/css/adminlte.min.css?v=3.2.0")}}">
 
-{{-- modal --}}
+{{-- Kalender Dashboard --}}
+

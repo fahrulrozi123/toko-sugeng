@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produk;
 use App\Models\Category;
+use App\Models\Transaksi;
 use Session;
 
 class ProdukController extends Controller

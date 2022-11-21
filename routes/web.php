@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,13 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('backend.dashboard');
-});
+// Route::get('/', function () {
+//     return view('backend.dashboard');
+// });
 
 Auth::routes();
+
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 //kategori
 Route::get('/daftarkategori', [CategoryController::class, 'index'])->name('daftarkategori');
 Route::post('/tambahdata', [CategoryController::class, 'tambahdata'])->name('tambahdata');
@@ -28,11 +31,14 @@ Route::get('/tampilkategori/{id_kategori}', [CategoryController::class, 'tampilk
 Route::post('/updatekategori/{id_kategori}', [CategoryController::class, 'updatekategori'])->name('updatekategori');
 Route::get('/hapuskategori/{id_kategori}', [CategoryController::class, 'hapuskategori'])->name('hapuskategori');
 
+// produk
 Route::get('/daftarproduk', [ProdukController::class, 'index'])->name('daftarproduk');
 Route::post('/tambahproduk', [ProdukController::class, 'tambahproduk'])->name('tambahproduk');
 Route::get('/tampilproduk/{id_produk}', [ProdukController::class, 'tampilproduk'])->name('tampilproduk');
 Route::post('/updateproduk/{id_produk}', [ProdukController::class, 'updateproduk'])->name('updateproduk');
 Route::get('/hapusproduk/{id_produk}', [ProdukController::class, 'hapusproduk'])->name('hapusproduk');
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+// transaksi
+Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

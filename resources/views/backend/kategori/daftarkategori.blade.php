@@ -31,7 +31,8 @@
                     </div>
                     <div class="card-body">
                         @if ($message = Session::get('sukses'))
-                            <div class="alert alert-success alert-block" style="text-align: center;">
+                            <div class="alert alert-success alert-block">
+                                <i class="fa fa-check icon"></i>
                                 <button type="button" class="close" data-dismiss="alert">×</button>
                                 <strong>{{ $message }}</strong>
                             </div>
