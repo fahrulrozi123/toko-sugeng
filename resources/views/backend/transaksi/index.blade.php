@@ -30,22 +30,19 @@
         <div class="">
             <div class="row">
                 @foreach ($produk as $row)
-                    <div class="col-lg-4">
-                        <div class="card">
+                    <div class="col-lg-2">
+                        <div class="card" style="width: 13rem;">
                             <div class="card-body">
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="{{ asset('post-images/'.$row->image) }}" class="img-fluid rounded-start" alt="...">
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><b>{{ $row->nama_produk }}</b></h5>
-                                                <p class="card-text">{{ $row->harga_jual }}</p>
-                                            </div>
-                                        </div>
+                                <div class="card" style="width: 10rem;">
+                                    <img src="{{ asset('post-images/'.$row->image) }}" class="card-img-top" alt="..." style="width: 160px; height: 100px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><b>{{ $row->nama_produk }}</b></h5>
+                                        <p class="card-text">{{ $row->harga_jual }}</p>
                                     </div>
                                 </div>
+                                <button type="submit" class="btn btn-block btn-outline-primary btn-sm">
+                                    <i class="fa fa-save"></i> Pilih
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -55,5 +52,4 @@
     </div>
 </div>
 @endsection
-
 
