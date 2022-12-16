@@ -1,6 +1,7 @@
 @extends('backend.template')
 
 @section('produk')
+
     <li class="nav-item">
         <a href="#" class="nav-link active">
         <i class="nav-icon fas fa-edit"></i>
@@ -31,30 +32,30 @@
                     </div>
                     <div class="card-body">
                         @if ($message = Session::get('sukses'))
-                            <div class="alert alert-success alert-block">
-                                <i class="fa fa-check icon"></i>
-                                <button type="button" class="close" data-dismiss="alert">×</button>
+                        <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
+                            <div class="flex">
+                            <div class="py-1">
+                                <svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg>
+                            </div>
+                            <div>
                                 <strong>{{ $message }}</strong>
                             </div>
+                            </div>
+                        </div>
                         @endif
+                        <br>
                         <table id="datatable1" class="table table-bordered table-striped">
                             <div class="col-lg-6">
-                                <div class="btn-group w-100">
-                                    <span class="btn btn-sm btn-flat btn-success col fileinput-button" data-toggle="modal" data-target="#tambah">
-                                        <i class="fas fa-plus"></i>
-                                        <span>Add Produk</span>
-                                    </span>
-                                    <button type="submit" class="btn btn-sm btn-flat  btn-primary col start">
-                                        <i class="fas fa-upload"></i>
-                                        <span>Start upload</span>
-                                    </button>
-                                    <button type="reset" class="btn btn-sm btn-flat btn-warning col cancel">
-                                        <i class="fas fa-times-circle"></i>
-                                        <span>Cancel upload</span>
-                                    </button>
-                                    </div>
+                            <div class="btn-group w-100">
+                                <button class="text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" data-toggle="modal" data-target="#tambah">
+                                    <i class="fas fa-plus"></i> Add Category
+                                </button>
+                                <button type="submit" class="text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                                    <i class="fas fa-upload"></i> Start upload
+                                </button>
                                 </div>
                             </div>
+                        </div>
                         <thead>
                         <tr>
                             <th>No</th>
@@ -81,14 +82,14 @@
                                 <td>{{ $row->id_category }}</td>
                                 <td>{{ $row->nama_produk }}</td>
                                 <td>{{ $row->merk }}</td>
-                                <td style="text-align: right">{{ $row->harga_jual }}</td>
-                                <td style="text-align: right">{{ $row->harga_beli }}</td>
-                                <td style="text-align: right">{{ $row->stok }}</td>
+                                <td>{{ $row->harga_jual }}</td>
+                                <td>{{ $row->harga_beli }}</td>
+                                <td>{{ $row->stok }}</td>
                                 <td>
-                                    <a data-toggle="modal" data-target="#edit" href="/tampilkategori/{{ $row->id_kategori }}" class="btn btn-sm btn-flat btn-primary">
+                                    <a data-toggle="modal" data-target="#edit" href="/tampilkategori/{{ $row->id_kategori }}" class="btn btn-sm btn-flat btn-primary" style="border-radius: 30%">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
-                                    <a href="#" class="btn btn-sm btn-flat btn-danger hapusproduk" data-id_produk="{{ $row->id_produk }}" data-nama_produk="{{ $row->nama_produk }}">
+                                    <a href="#" class="btn btn-sm btn-flat btn-danger hapusproduk" data-id_produk="{{ $row->id_produk }}" data-nama_produk="{{ $row->nama_produk }}" style="border-radius: 30%">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </a>
                                 </td>
@@ -103,7 +104,7 @@
                             <div class="modal-dialog modal-lg">
                               <div class="modal-content">
                                 <div class="modal-header" style="background-color: rgb(1, 1, 41)">
-                                    <h3 style="color: #fff;">Tambah Produk</h3>
+                                    <h2 style="color: #fff;">Tambah Produk</h2>
                                     <button type="button" class="close" data-dismiss="modal" style="color: #fff">&times;</button>
                                 </div>
                                 <form method="post" action="tambahproduk" enctype="multipart/form-data">
@@ -164,11 +165,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-sm btn-flat btn-primary tambah">
+                                        <div class="modal-footer btn-group">
+                                            <button type="submit" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                                                 <i class="fa fa-save"></i> Simpan
                                             </button>
-                                            <button type="reset" class="btn btn-sm btn-flat btn-danger">
+                                            <button type="Reset" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                                                 <i class="fa fa-arrow-circle-left"></i> Reset
                                             </button>
                                         </div>

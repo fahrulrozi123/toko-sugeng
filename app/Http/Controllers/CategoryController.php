@@ -34,7 +34,7 @@ class CategoryController extends Controller
     {
         $data = Category::find($id_kategori);
         $data->update($request->all());
-        Session::flash('sukses','Data berhasil di tambahkan');
+        Session::flash('sukses','Data berhasil di edit');
 
         return redirect()->route('daftarkategori');
     }
